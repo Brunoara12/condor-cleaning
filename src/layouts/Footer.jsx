@@ -3,7 +3,7 @@ import { AdminPanelSettingsOutlined, LockOpenOutlined, SecurityOutlined } from '
 
 const Footer = () => {
     return (
-        <div className='flex justify-around bg-black'>
+        <div className='flex justify-around w-full bg-black'>
             {/* Column 1*/}
             <div className='text-white p-3'>
                 <h2>Quick Links</h2>

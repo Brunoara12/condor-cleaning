@@ -19,6 +19,7 @@ function App() {
         >
           <Route index element={<HomePage />} />
           <Route path='/contact-me/' element={<div>CONTACT PAGE</div>} />
+          <Route path='/services/' element={<div>SERVICES PAGE</div>} />
         </Route>
 
       </>
