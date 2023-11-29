@@ -6,6 +6,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Root from './layouts/Root'
 import HomePage from './pages/HomePage'
+import ServicesPage from './pages/ServicesPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,7 +20,7 @@ function App() {
         >
           <Route index element={<HomePage />} />
           <Route path='/contact-me/' element={<div>CONTACT PAGE</div>} />
-          <Route path='/services/' element={<div>SERVICES PAGE</div>} />
+          <Route path='/services/' element={<ServicesPage />} />
         </Route>
 
       </>
