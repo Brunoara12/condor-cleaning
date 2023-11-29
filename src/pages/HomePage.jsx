@@ -20,7 +20,7 @@ const HomePage = () => {
                 }}
                 className='p-3 flex'>
                 <Box className='flex flex-col bg-opacity-50 bg-black rounded-lg ml-6 my-3 text-white basis-1/3 items-center justify-around'>
-                    <img src='src/assets/condor-cleaning_p4.png' className='max-w-[180px]' />
+                    <img src='/src/assets/condor-cleaning-p4.png' className='max-w-[180px]' />
                     <h1>Best House Cleaning</h1>
                     <h2>Exceptional Quality Cleaning</h2>
                     <Box className='flex justify-around'>
