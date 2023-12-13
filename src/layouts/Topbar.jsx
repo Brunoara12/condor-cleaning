@@ -25,6 +25,9 @@ const Topbar = () => {
                 <ContentGroup title="Services" height="200" rootUrl="/services/">
 
                 </ContentGroup>
+                <ContentGroup title="FAQ" height="200" rootUrl="/faq/">
+
+                </ContentGroup>
             </SiteNav>
         </div>
     )
