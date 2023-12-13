@@ -7,6 +7,7 @@ import './App.css'
 import Root from './layouts/Root'
 import HomePage from './pages/HomePage'
 import ServicesPage from './pages/ServicesPage'
+import FAQPage from './pages/FAQPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,7 +23,7 @@ function App() {
           <Route path='/about-us/' element={<div>ABOUT US PAGE</div>} />
           <Route path='/services/' element={<ServicesPage />} />
           <Route path='/careers/' element={<div>CAREERS PAGE</div>} />
-          <Route path='/faq/' element={<div>FAQ PAGE</div>} />
+          <Route path='/faq/' element={<FAQPage />} />
           <Route path='/contact-us/' element={<div>CONTACT US PAGE</div>} />
         </Route>
 

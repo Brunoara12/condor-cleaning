@@ -116,21 +116,27 @@ const ServicesPage = () => {
                     <Box className='m-auto items-center'>
                         Most Trusted Commercial & Residential Cleaning Services In The Greater Seattle Metro Area.
                     </Box>
+
                     <Box className='m-auto items-center max-w-[200]'>
                         Service Area: Bellevue, Bothell, Edmonds, Everett, Issaquah, Kirkland, Lynnwood, Marysville, Mercer Island, Mukilteo, North Creek, Redmond, Renton, Sammamish, Shoreline, Seattle, Smokey Point, and surrounding communities.
                     </Box>
+
                     <Box className='m-auto items-center max-w'>
                         Find Us On Google Maps
                     </Box>
+
                     <Box className='m-auto items-center max-w'>
                         info@qbclean.com
                     </Box>
+
                     <Box className='m-auto items-center max-w'>
                         (123) 456-7890
                     </Box>
+
                     <Box className='m-auto items-center max-w'>
                         123 56th Rd Nametown, NJ 66542
                     </Box>
+
                     <Box className='m-auto items-center max-w'>
                         7:00am - 9:00pm Mon - Sun
                     </Box>
