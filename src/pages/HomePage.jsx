@@ -8,6 +8,8 @@ import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import ModelTrainingIcon from '@mui/icons-material/ModelTraining';
 import Diversity1Icon from '@mui/icons-material/Diversity1';
 import PaymentIcon from '@mui/icons-material/Payment';
+import ServicesGrid from '../components/ServicesGrid';
+import InitialEstimateForm from '../components/InitialEstimateForm';
 
 const highlights = [
     {
@@ -72,8 +74,10 @@ const HomePage = () => {
                 </Box>
             </Box>
 
-            <Box>
-                Estimate Form
+            <Box className='bg-skin-bg'>
+                <Box className='mx-[35%] my-10'>
+                    <InitialEstimateForm />
+                </Box>
             </Box>
 
             <Box className='bg-skin-bgAccent'>
@@ -100,7 +104,7 @@ const HomePage = () => {
             </Box>
 
             <Box>
-                Services
+                <ServicesGrid />
             </Box>
 
             <Box>
