@@ -4,8 +4,8 @@ import BackgroundImage from '../../src/assets/living-room.jpg'
 import { LockOpenOutlined } from '@mui/icons-material';
 
 const ServicesPage = () => {
-  return (
-    <div className='flex flex-col flex-1'>
+    return (
+        <div className='flex flex-col flex-1'>
             <h2>Services Page</h2>
 
                 {/*Page Title*/}
@@ -34,11 +34,11 @@ const ServicesPage = () => {
                     <Box className="bg-yellow-300 rounded-full w-8 h-8 items-center">
                         <LockOpenOutlined/>
                     </Box>
-                    
+
                     <Box className="bg-yellow-300 rounded-full w-8 h-8 items-center">
                         <LockOpenOutlined/>
                     </Box>
-                    
+
                     <Box className="bg-yellow-300 rounded-full w-8 h-8 items-center">
                         <LockOpenOutlined/>
                     </Box>
@@ -51,12 +51,12 @@ const ServicesPage = () => {
                     <h1>Cleaning Services Designed To WOW</h1>
                     <h2>Experience a new era in cleaning services as we revolutionize the industry. Our commitment to a seamless online experience sets us apart. Discover the buzz surrounding our innovative approach and embrace the future of cleanliness today. Our convenient online platform allows you to schedule services effortlessly. We combine cutting-edge technology with skilled professionals to elevate cleanliness standards. Meticulous attention to detail ensures spotless results using eco-friendly solutions. Exceptional customer service is our priority, with a dedicated team ready to assist you. Personalized cleaning solutions cater to your unique needs. Join us in embracing the future of cleaning by scheduling your cleaning session with us today.</h2>
                 </Box>
-                
+
                 <Box className='my-3 m-auto items-center'>
                     <img src='/src/assets/condor-cleaning-p4.png' className='max-w-[180px]'/>
                 </Box>
             </Box>
-            
+
                 {/*Services Provided*/}
             <Box className='flex flex-col mb-5'>
                 <Box className='my-3 m-auto items-center' >
@@ -72,7 +72,7 @@ const ServicesPage = () => {
                             Learn More
                         </button> 
                     </Box>
-                    
+
                     <Box className='m-auto items-center max-w-[180px]'>
                         <img src='/src/assets/Condor Cleaning_WhBg.png' className='max-w-[180px]'/>
                         <h3>Deep House Cleaning Services</h3>
@@ -170,21 +170,27 @@ const ServicesPage = () => {
                     <Box className='m-auto items-center'>
                         Most Trusted Commercial & Residential Cleaning Services In The Greater Seattle Metro Area.
                     </Box>
+
                     <Box className='m-auto items-center max-w-[200]'>
                         Service Area: Bellevue, Bothell, Edmonds, Everett, Issaquah, Kirkland, Lynnwood, Marysville, Mercer Island, Mukilteo, North Creek, Redmond, Renton, Sammamish, Shoreline, Seattle, Smokey Point, and surrounding communities.
                     </Box>
+
                     <Box className='m-auto items-center max-w'>
                         Find Us On Google Maps
                     </Box>
+
                     <Box className='m-auto items-center max-w'>
                         info@qbclean.com
                     </Box>
+
                     <Box className='m-auto items-center max-w'>
                         (123) 456-7890
                     </Box>
+
                     <Box className='m-auto items-center max-w'>
                         123 56th Rd Nametown, NJ 66542
                     </Box>
+
                     <Box className='m-auto items-center max-w'>
                         7:00am - 9:00pm Mon - Sun
                     </Box>
@@ -192,7 +198,7 @@ const ServicesPage = () => {
             </Box>
 
         </div >
-  )
+    )
 }
 
 export default ServicesPage
