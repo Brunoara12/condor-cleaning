@@ -1,32 +1,139 @@
 import React from 'react'
-import SiteNav, { ContentGroup } from 'react-site-nav'
-import { Link } from 'react-router-dom';
+import { Box } from '@mui/material'
+import { NavLink as Link } from 'react-router-dom';
+import logo from '../../src/assets/PureHousekeepingRectangle_WhFu.png'
+import styled from '@emotion/styled'
 
+import MenuIcon from '@mui/icons-material/Menu';
+
+export const Nav = styled.nav`
+    background: #012233;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem calc((100vw - 1000px) / 2);
+  z-index: 10;
+
+  /* Third Nav */
+  /* justify-content: flex-start; */
+`
+export const NavLink = styled(Link)`
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+
+  &.active {
+    color: #f0f;
+  }
+`;
+
+export const Bars = styled(MenuIcon)`
+  display: none;
+  color: #fff;
+
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 90%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+`;
+
+export const NavMenu = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: -24px;
+
+  /* Second Nav */
+  /* margin-right: 24px; */
+
+  /* Third Nav */
+  /* width: 100vw;
+  white-space: nowrap; */
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const NavBtn = styled.nav`
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+
+  /* Third Nav */
+  /* justify-content: flex-end;
+  width: 100vw; */
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const NavBtnLink = styled(Link)`
+  border-radius: 4px;
+  background: #f0f;
+  padding: 10px 22px;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  /* Second Nav */
+  margin-left: 24px;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #012233;
+  }
+`;
 const Topbar = () => {
     return (
-        <div className='w-full fixed'>
-            {/* 2. Add SiteNav with ContentGroup as children */}
-            <SiteNav
-                className='flex flex-1'>
-                <ContentGroup title="Home" rootUrl="/" />
-                <ContentGroup title="About" height="200">
-                    {/* 3. You can add anything in a ContentGroup */}
-                    <ul>
-                        {/* react router link! */}
-                        <li><Link to="/contact-me">Contact Me</Link></li>
-                        <li>Another list item</li>
-                    </ul>
-                </ContentGroup>
-                <ContentGroup title="Contact" height="200">
-                    Free text followed by some links.<br />
-                    <a href="mailto:yusinto@gmail.com">Email</a><br />
-                    <a href="https://github.com/yusinto">Github</a>
-                </ContentGroup>
-                <ContentGroup title="Services" height="200" rootUrl="/services/">
-
-                </ContentGroup>
-            </SiteNav>
-        </div>
+        <Box className='w-full fixed'>
+            <Nav>
+                <NavLink to="/">
+                    <img alt='logo' className='max-w-[250px] block m-auto' src={logo} />
+                </NavLink>
+                <Bars />
+                <NavMenu>
+                    <NavLink to="/">
+                        Home
+                    </NavLink>
+                    <NavLink to="/about-us" >
+                        About
+                    </NavLink>
+                    <NavLink to="/services/" >
+                        Services
+                    </NavLink>
+                    <NavLink to="/careers/" >
+                        Careers
+                    </NavLink>
+                    <NavLink to="/faq/" >
+                        FAQ
+                    </NavLink>
+                    <NavLink to="/contact-us/" >
+                        Contact
+                    </NavLink>
+                </NavMenu>
+                <NavBtn>
+                    <NavBtnLink >
+                        Quote
+                    </NavBtnLink>
+                </NavBtn>
+            </Nav>
+        </Box >
     )
 }
 

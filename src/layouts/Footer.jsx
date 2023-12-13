@@ -1,9 +1,12 @@
 import React from 'react'
-import { AdminPanelSettingsOutlined, LockOpenOutlined, SecurityOutlined } from '@mui/icons-material';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
+import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
+import { Box } from '@mui/material';
 
 const Footer = () => {
     return (
-        <div className='flex justify-around w-full bg-black'>
+        <div className='flex justify-around w-full bg-skin-bg'>
             {/* Column 1*/}
             <div className='text-white p-3'>
                 <h2>Quick Links</h2>
@@ -27,8 +30,14 @@ const Footer = () => {
                 <h2>Service Areas</h2>
                 <ul>
                     <li>Mahwah, NJ</li>
+                    <li>Ramsey, NJ</li>
+                    <li>Waldwick, NJ</li>
+                    <li>Wyckoff, NJ</li>
+                    <li>Oakland, NJ</li>
+                    <li>Franklin Lakes, NJ</li>
                     <li>Midlank Park, NJ</li>
                     <li>Allendale, NJ</li>
+                    <li>Pompton Lakes, NJ</li>
                 </ul>
             </div>
             <div className='text-white p-3'>
@@ -36,20 +45,23 @@ const Footer = () => {
                 <ul>
                     <li>
                         <div className='flex'>
-                            <AdminPanelSettingsOutlined />
+                            <PhoneIcon className='mr-2' />
                             <p>(321)213-2131</p>
                         </div>
                     </li>
                     <li>
                         <div className='flex'>
-                            <LockOpenOutlined />
+                            <EmailIcon className='mr-2' />
                             <p>info@condorcleaning.com</p>
                         </div>
                     </li>
                     <li>
                         <div className='flex'>
-                            <SecurityOutlined />
-                            <p>7:00am-9:00pm Mon-Sun</p>
+                            <AccessTimeFilledIcon className='mr-2' />
+                            <Box className='flex flex-col'>
+                                <p>7:00am-7:00pm Mon-Fri</p>
+                                <p>9:00am-6:00pm Sat-Sun</p>
+                            </Box>
                         </div>
                     </li>
                 </ul>

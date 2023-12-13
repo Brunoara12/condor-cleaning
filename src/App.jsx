@@ -19,8 +19,11 @@ function App() {
           element={<Root />}
         >
           <Route index element={<HomePage />} />
-          <Route path='/contact-me/' element={<div>CONTACT PAGE</div>} />
+          <Route path='/about-us/' element={<div>ABOUT US PAGE</div>} />
           <Route path='/services/' element={<ServicesPage />} />
+          <Route path='/careers/' element={<div>CAREERS PAGE</div>} />
+          <Route path='/faq/' element={<div>FAQ PAGE</div>} />
+          <Route path='/contact-us/' element={<div>CONTACT US PAGE</div>} />
         </Route>
 
       </>
