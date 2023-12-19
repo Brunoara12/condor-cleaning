@@ -1,57 +1,70 @@
-import React from 'react'
-import { Box, Button, Grid } from '@mui/material'
-import BackgroundImage from '../../src/assets/living-room.jpg'
-import AssignmentIcon from '@mui/icons-material/Assignment';
-import SendToMobileIcon from '@mui/icons-material/SendToMobile';
-import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
-import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
-import ModelTrainingIcon from '@mui/icons-material/ModelTraining';
-import Diversity1Icon from '@mui/icons-material/Diversity1';
-import PaymentIcon from '@mui/icons-material/Payment';
+import React from 'react';
+import { Box, Grid } from '@mui/material';
 import ServicesGrid from '../components/ServicesGrid';
 import InitialEstimateForm from '../components/InitialEstimateForm';
+import CompanyHighlights from '../components/CompanyHighlights';
+import { DrawingManagerF, GoogleMap, LoadScript, Marker, Polygon, useLoadScript } from '@react-google-maps/api';
+import { color } from '@mui/system';
+import ServiceAreasPolygons from '../components/ServiceAreasPolygons';
 
-const highlights = [
-    {
-        icon: <AccessTimeFilledIcon className='text-9xl' />,
-        title: "Save Time, Sparkle Every Time",
-        body: "We're your shortcut to reclaimed time. Our expert team handles the dirty work efficiently, allowing you to focus on what matters most. Experience the peace of mind that comes with delegating your cleaning needs to professionals."
-    },
-    {
-        icon: <AssignmentIcon className='text-9xl' />,
-        title: "Easy and Quick Estimates",
-        body: "Experience the speed of simplicity with our Quick Online Estimate service! Get a precise estimate for your cleaning needs in just a few clicks. Time-saving convenience meets accurate pricing—your path to a cleaner space starts here."
-    },
-    {
-        icon: <ModelTrainingIcon className='text-9xl' />,
-        title: "Trained and Vetted Employees",
-        body: "Trust is our foundation. Rest easy knowing your space is in capable hands. We hire and train vetted professionals, ensuring a reliable and secure cleaning experience. Your satisfaction and peace of mind are our top priorities."
-    },
-    {
-        icon: <ElectricBoltIcon className='text-9xl' />,
-        title: "Rapid and Efficient Results",
-        body: "Our team of trained professionals is not only fast but also incredibly efficient. Experience rapid, top-quality cleaning services that leave your space sparkling in no time. Swift and exceptional results – that's the hallmark of our service."
-    },
-    {
-        icon: <Diversity1Icon className='text-9xl' />,
-        title: "Family-Owned, Clean Approved",
-        body: "We're more than a service – we're family. As a family-owned and operated business, our commitment goes beyond cleanliness; it's about trust and personalized care. Experience the difference that comes from our family to yours – where every space is treated with the warmth and attention it deserves."
-    },
-    {
-        icon: <PaymentIcon className='text-9xl' />,
-        title: "Seamless Payment Options",
-        body: "We believe in convenience for our clients. That's why we proudly accept all types of payments. Seamless transactions meet spotless spaces – experience cleaning services tailored to your needs, with payment options as flexible as our service."
+
+import LoyaltyIcon from '@mui/icons-material/Loyalty';
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import SendToMobileIcon from '@mui/icons-material/SendToMobile';
+
+import BackgroundImage from '../../src/assets/living-room.jpg';
+import CleaningImage from '../../src/assets/cleaning-wiping.jpg';
+
+
+const libraries = ['places'];
+const mapContainerStyle = {
+
+    height: '100%',
+    width: '65%',
+    maxWidth: '750px',
+    maxHeight: '750px'
+
+};
+const center = {
+    lat: 41.034256,  // default latitude
+    lng: -74.146363 // default longitude
+};
+
+
+export const HomePage = () => {
+
+    const [state, setState] = React.useState({
+        drawingMode: "polygon",
+    });
+
+    const noDraw = () => {
+        setState(function set(prevState) {
+            return Object.assign({}, prevState, {
+                drawingMode: "maker",
+            });
+        });
+    };
+
+    const { isLoaded, loadError } = useLoadScript({
+        googleMapsApiKey: 'AIzaSyAYPUFyeI0GaRes03YLOBplC6mQVpn0y5M',
+        libraries: ["drawing"],
+    });
+
+    if (loadError) {
+        return <div>Error loading maps</div>;
     }
-]
 
-const HomePage = () => {
+    if (!isLoaded) {
+        return <div>Loading maps</div>;
+    }
+
     return (
         <div className='flex flex-col flex-1'>
             <Box
                 sx={{
                     backgroundImage: `url(${BackgroundImage})`,
                     backgroundPositionX: '50%',
-                    backgroundPositionY: '-300px',
+                    backgroundPositionY: '-600px',
                     height: '600px',
                     backgroundAttachment: 'fixed',
                     backgroundSize: 'cover',
@@ -75,23 +88,14 @@ const HomePage = () => {
             </Box>
 
             <Box className='bg-skin-bg'>
-                <Box className='mx-[35%] my-10'>
+                <Box className='mx-[30%] my-10'>
                     <InitialEstimateForm />
                 </Box>
             </Box>
 
             <Box className='bg-skin-bgAccent'>
                 <Box className='mx-[25%] my-10'>
-                    <h2 className='mb-4'>Why Choose Us?</h2>
-                    <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
-                        {highlights.map((highlight, i) => {
-                            return <Grid item key={i} sm={12} md={6}>
-                                {highlight.icon}
-                                <h3 className='my-1'>{highlight.title}</h3>
-                                <p>{highlight.body}</p>
-                            </Grid>
-                        })}
-                    </Grid>
+                    <CompanyHighlights />
                 </Box>
             </Box>
 
@@ -106,12 +110,51 @@ const HomePage = () => {
             <Box>
                 <ServicesGrid />
             </Box>
-
-            <Box>
-                Map Service Area
+            <Box className='bg-skin-bgAccent flex p-14 '>
+                <Box className='flex flex-1 h-[40vh] gap-20 justify-center'>
+                    <GoogleMap
+                        mapContainerStyle={mapContainerStyle}
+                        zoom={11}
+                        center={center}
+                    >
+                        <ServiceAreasPolygons />
+                    </GoogleMap>
+                    <Box className='w-[35%] text-left flex flex-col gap-5'>
+                        <h2>Best House Cleaning and Housekeeping Services in North Jersey</h2>
+                        <p><b>Our Service Area</b>: Mahwah, Ramsey, Waldwick, Wyckoff, Oakland, Franklin Lakes, Midland Park, Allendale, Pompton Lakes</p>
+                        <p>{`We're constantly growing and are taking on new surrounding areas, put in your zip code to see if we're in your area!`}</p>
+                        <input></input>
+                        <button className='btn-primary'>Search</button>
+                    </Box>
+                </Box>
             </Box>
-        </div >
-    )
-}
+
+            <Box
+                sx={{
+                    backgroundImage: `url(${CleaningImage})`,
+                    backgroundPositionX: '50%',
+                    backgroundPositionY: '100%',
+                    height: '750px',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat'
+                }}
+                className='p-3 flex'>
+                <Box className='flex flex-col  rounded-lg py-5 px-10 ml-6 my-20 text-skin-base basis-1/3 items-center justify-around'>
+                    <h1 className='text-7xl'>{`Here's $35 Off Your First Cleaning`}</h1>
+                    <Box className='flex justify-around'>
+                        <button className="mx-2 btn-primary">
+                            <LoyaltyIcon className='mr-2' />
+                            Discount
+                        </button>
+                        <button className='mx-2 btn-primary'>
+                            <SendToMobileIcon className='mr-2' />
+                            Call or Text
+                        </button>
+                    </Box>
+                </Box>
+            </Box>
+        </div>
+    );
+};
 
 export default HomePage

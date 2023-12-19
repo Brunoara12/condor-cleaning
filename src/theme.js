@@ -107,18 +107,29 @@ export const themeSettings = () => {
                     root: {
                         color: "#fff"
                     }
-                }
+                },
             },
             MuiTextField: {
                 defaultProps: {
                     color: "primary",
                 },
             },
-            MuiSelectField: {
+            MuiSelect: {
                 defaultProps: {
                     color: "primary",
+                    MenuProps: {
+                        disableScrollLock: true
+                    },
+                    sx: {
+                        "& .MuiSvgIcon-root": {
+                            color: "white",
+                        },
+                    }
                 },
             },
+            MuiSelectIcon: {
+
+            }
         },
         typography: {
             fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
