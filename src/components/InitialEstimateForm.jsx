@@ -4,7 +4,6 @@ import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 
 import React, { useEffect } from 'react'
-import ReactHookFormSelect from './ReactHookFormSelect'
 
 
 const initialValues = {
@@ -14,6 +13,7 @@ const initialValues = {
     contact: "",
     bedrooms: "",
     bathrooms: "",
+    zipcode: ""
 }
 
 const phoneRegExp = /^[(]?[0-9]{3}[)]?[-\s\\.]?[0-9]{3}[-\s\\.]?[0-9]{4,4}$/
@@ -27,6 +27,7 @@ const userSchema = yup.object().shape({
         .matches(phoneRegExp, "Phone number is not valid"),
     bedrooms: yup.string().required("Required"),
     bathrooms: yup.string().required("Required"),
+    zipcode: yup.string().required("Required"),
 }).required()
 
 
@@ -116,26 +117,39 @@ const InitialEstimateForm = () => {
                     <h3 className='text-left'>Service</h3>
                 </Box>
                 <TextField
+                    select
                     fullWidth
                     variant="filled"
-                    type="text"
+                    defaultValue=""
                     label="Service Type"
+                    inputProps={register('serviceType', {
+                        required: 'Please enter Service Type',
+                        classes: {
+                            icon: { fill: "#ff0" },
+                        },
+                    })}
+                    MenuProps={{
+                        disableScrollLock: false,
+                    }}
                     error={!!touchedFields.serviceType && !!errors.serviceType}
                     helperText={touchedFields.serviceType && errors.serviceType?.message}
                     sx={{ gridColumn: "span 4" }}
-                    {...register('serviceType')}
-                />
+                >
+                    <MenuItem value="">Select...</MenuItem>
+                    <MenuItem value="1">One Time Cleaning</MenuItem>
+                    <MenuItem value="2">Recurring Cleaning</MenuItem>
+                </TextField>
 
 
                 <TextField
                     fullWidth
                     variant="filled"
                     type="text"
-                    label="Address 1"
-                    error={!!touchedFields.address1 && !!errors.address1}
-                    helperText={touchedFields.address1 && errors.address1?.message}
+                    label="Zip Code"
+                    error={!!touchedFields.zipcode && !!errors.zipcode}
+                    helperText={touchedFields.zipcode && errors.zipcode?.message}
                     sx={{ gridColumn: "span 2" }}
-                    {...register('address1')}
+                    {...register('zipcode')}
                 />
 
                 <TextField
@@ -147,6 +161,9 @@ const InitialEstimateForm = () => {
                     inputProps={register('bedrooms', {
                         required: 'Please enter bedrooms',
                     })}
+                    MenuProps={{
+                        disableScrollLock: false,
+                    }}
                     error={!!touchedFields.bedrooms && !!errors.bedrooms}
                     helperText={touchedFields.bedrooms && errors.bedrooms?.message}
                     sx={{ gridColumn: "span 1" }}
@@ -155,6 +172,12 @@ const InitialEstimateForm = () => {
                     <MenuItem value="1">1</MenuItem>
                     <MenuItem value="2">2</MenuItem>
                     <MenuItem value="3">3</MenuItem>
+                    <MenuItem value="4">4</MenuItem>
+                    <MenuItem value="5">5</MenuItem>
+                    <MenuItem value="4">6</MenuItem>
+                    <MenuItem value="5">7</MenuItem>
+                    <MenuItem value="4">8+</MenuItem>
+
                 </TextField>
 
                 <TextField
@@ -174,6 +197,11 @@ const InitialEstimateForm = () => {
                     <MenuItem value="1">1</MenuItem>
                     <MenuItem value="2">2</MenuItem>
                     <MenuItem value="3">3</MenuItem>
+                    <MenuItem value="4">4</MenuItem>
+                    <MenuItem value="5">5</MenuItem>
+                    <MenuItem value="4">6</MenuItem>
+                    <MenuItem value="5">7</MenuItem>
+                    <MenuItem value="4">8+</MenuItem>
                 </TextField>
             </Box>
             <Box className="flex justify-end mt-5">

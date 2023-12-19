@@ -129,7 +129,7 @@ const Topbar = () => {
                 </NavMenu>
                 <NavBtn>
                     <NavBtnLink >
-                        Quote
+                        Estimate
                     </NavBtnLink>
                 </NavBtn>
             </Nav>
