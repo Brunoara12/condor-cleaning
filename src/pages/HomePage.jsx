@@ -46,7 +46,7 @@ export const HomePage = () => {
     };
 
     const { isLoaded, loadError } = useLoadScript({
-        googleMapsApiKey: '',
+        googleMapsApiKey: import.meta.env.VITE_MAPS_API_KEY,
         libraries: ["drawing"],
     });
 
