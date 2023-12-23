@@ -46,7 +46,7 @@ export const HomePage = () => {
     };
 
     const { isLoaded, loadError } = useLoadScript({
-        googleMapsApiKey: '',
+        googleMapsApiKey: '***REMOVED***',
         libraries: ["drawing"],
     });
 
