@@ -2,31 +2,34 @@ import { Box, Button, FormControl, InputLabel, MenuItem, Select, TextField, useM
 import { useForm } from 'react-hook-form'
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
+import axios from 'axios'
 
 import React, { useEffect } from 'react'
-import ReactHookFormSelect from './ReactHookFormSelect'
 
+const apiBaseURL = import.meta.env.VITE_BACKEND_API
 
 const initialValues = {
-    name: "",
+    firstName: "",
     serviceType: "",
     email: "",
-    contact: "",
+    phoneNumber: "",
     bedrooms: "",
     bathrooms: "",
+    zipCode: ""
 }
 
 const phoneRegExp = /^[(]?[0-9]{3}[)]?[-\s\\.]?[0-9]{3}[-\s\\.]?[0-9]{4,4}$/
 const emailRegExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 const userSchema = yup.object().shape({
-    name: yup.string().required("Required"),
+    firstName: yup.string().required("Required"),
     serviceType: yup.string().required("Required"),
     email: yup.string().matches(emailRegExp, "Invalid email").required("Required"),
-    contact: yup.string().nullable().transform((curr, orig) => (orig === "" ? null : curr))
-        .matches(phoneRegExp, "Phone number is not valid"),
+    phoneNumber: yup.string().nullable().transform((curr, orig) => (orig === "" ? null : curr))
+        .matches(phoneRegExp, "Phone number is not valid").required("Required"),
     bedrooms: yup.string().required("Required"),
     bathrooms: yup.string().required("Required"),
+    zipCode: yup.string().required("Required"),
 }).required()
 
 
@@ -50,6 +53,11 @@ const InitialEstimateForm = () => {
 
     const formSubmitHandler = (data) => {
 
+        axios.post(apiBaseURL + "/leads",
+            {
+                ...data,
+                leadMethod: 'Website'
+            })
         console.log(data)
         reset()
     }
@@ -83,24 +91,24 @@ const InitialEstimateForm = () => {
                     fullWidth
                     variant="filled"
                     type="text"
-                    label="Name"
+                    label="First Name"
                     onChange={() => {
                         console.log("TRIGGER")
                         trigger()
                     }}
-                    error={!!touchedFields.name && !!errors.name}
-                    helperText={touchedFields.name && errors.name?.message}
+                    error={!!touchedFields.firstName && !!errors.firstName}
+                    helperText={touchedFields.firstName && errors.firstName?.message}
                     sx={{ gridColumn: "span 2" }}
-                    {...register('name')} />
+                    {...register('firstName')} />
                 <TextField
                     fullWidth
                     variant="filled"
                     type="text"
                     label="Phone Number"
-                    error={!!touchedFields.contact && !!errors.contact}
-                    helperText={touchedFields.contact && errors.contact?.message}
+                    error={!!touchedFields.phoneNumber && !!errors.phoneNumber}
+                    helperText={touchedFields.phoneNumber && errors.phoneNumber?.message}
                     sx={{ gridColumn: "span 2" }}
-                    {...register('contact')}
+                    {...register('phoneNumber')}
                 />
                 <TextField
                     fullWidth
@@ -116,26 +124,39 @@ const InitialEstimateForm = () => {
                     <h3 className='text-left'>Service</h3>
                 </Box>
                 <TextField
+                    select
                     fullWidth
                     variant="filled"
-                    type="text"
+                    defaultValue=""
                     label="Service Type"
+                    inputProps={register('serviceType', {
+                        required: 'Please enter Service Type',
+                        classes: {
+                            icon: { fill: "#ff0" },
+                        },
+                    })}
+                    MenuProps={{
+                        disableScrollLock: false,
+                    }}
                     error={!!touchedFields.serviceType && !!errors.serviceType}
                     helperText={touchedFields.serviceType && errors.serviceType?.message}
                     sx={{ gridColumn: "span 4" }}
-                    {...register('serviceType')}
-                />
+                >
+                    <MenuItem value="">Select...</MenuItem>
+                    <MenuItem value="One Time Cleaning">One Time Cleaning</MenuItem>
+                    <MenuItem value="Recurring Cleaning">Recurring Cleaning</MenuItem>
+                </TextField>
 
 
                 <TextField
                     fullWidth
                     variant="filled"
                     type="text"
-                    label="Address 1"
-                    error={!!touchedFields.address1 && !!errors.address1}
-                    helperText={touchedFields.address1 && errors.address1?.message}
+                    label="Zip Code"
+                    error={!!touchedFields.zipCode && !!errors.zipCode}
+                    helperText={touchedFields.zipCode && errors.zipCode?.message}
                     sx={{ gridColumn: "span 2" }}
-                    {...register('address1')}
+                    {...register('zipCode')}
                 />
 
                 <TextField
@@ -147,6 +168,9 @@ const InitialEstimateForm = () => {
                     inputProps={register('bedrooms', {
                         required: 'Please enter bedrooms',
                     })}
+                    MenuProps={{
+                        disableScrollLock: false,
+                    }}
                     error={!!touchedFields.bedrooms && !!errors.bedrooms}
                     helperText={touchedFields.bedrooms && errors.bedrooms?.message}
                     sx={{ gridColumn: "span 1" }}
@@ -155,6 +179,12 @@ const InitialEstimateForm = () => {
                     <MenuItem value="1">1</MenuItem>
                     <MenuItem value="2">2</MenuItem>
                     <MenuItem value="3">3</MenuItem>
+                    <MenuItem value="4">4</MenuItem>
+                    <MenuItem value="5">5</MenuItem>
+                    <MenuItem value="6">6</MenuItem>
+                    <MenuItem value="7">7</MenuItem>
+                    <MenuItem value="8+">8+</MenuItem>
+
                 </TextField>
 
                 <TextField
@@ -174,6 +204,11 @@ const InitialEstimateForm = () => {
                     <MenuItem value="1">1</MenuItem>
                     <MenuItem value="2">2</MenuItem>
                     <MenuItem value="3">3</MenuItem>
+                    <MenuItem value="4">4</MenuItem>
+                    <MenuItem value="5">5</MenuItem>
+                    <MenuItem value="6">6</MenuItem>
+                    <MenuItem value="7">7</MenuItem>
+                    <MenuItem value="8+">8+</MenuItem>
                 </TextField>
             </Box>
             <Box className="flex justify-end mt-5">
