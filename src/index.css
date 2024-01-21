@@ -14,6 +14,10 @@
   .btn-primary {
     @apply bg-skin-buttPrim hover:bg-skin-bg py-2 px-4 rounded duration-500 text-center;
   }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-skin-bgAccent hover:border-skin-hover border-2 border-skin-prim py-2 px-4 rounded-full duration-500 text-center;
+  }
 }
 
 @layer base {
@@ -93,6 +97,14 @@ body {
   line-height: 1.5;
 }
 
+.slanted {
+  color: white;
+  background: repeating-linear-gradient(-60deg,
+      #ff00ff,
+      #ff00ff 25%,
+      #ffbfff 25%,
+      #ffbfff 50%);
+}
 
 
 /*

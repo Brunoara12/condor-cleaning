@@ -1,31 +1,37 @@
 import React from 'react'
 import { Box, Button } from '@mui/material'
-import BackgroundImage from '../../src/assets/living-room.jpg'
 import { LockOpenOutlined } from '@mui/icons-material';
 import ServicesGrid from '../components/ServicesGrid';
+import Window from '../../src/assets/window-clean.svg?react'
+import Fridge from "../../src/assets/fridge-clean.svg?react"
+import Oven from "../../src/assets/oven-clean.svg?react"
+import Cabinets from "../../src/assets/cabinets-clean.svg?react"
+import InitialEstimateForm from '../components/InitialEstimateForm';
+import DiscountSection from '../components/DiscountSection';
+
+import BathroomImage from '../../src/assets/bathroom.jpg'
 
 const ServicesPage = () => {
     return (
         <div className='flex flex-col flex-1'>
-            <h2>Services Page</h2>
-
             {/*Page Title*/}
             <Box
                 sx={{
-                    backgroundImage: `url(${BackgroundImage})`,
+                    backgroundImage: `url(${BathroomImage})`,
                     backgroundPositionX: '50%',
                     backgroundPositionY: "center",
-                    height: '350px',
+                    height: '450px',
                     backgroundSize: 'cover',
                 }}
                 className='p-3 flex'>
                 <Box className='flex flex-col bg-opacity-50 bg-black rounded-lg my-3 m-auto text-white basis-2/5 items-center justify-around'>
-                    <h1>Trusted Commercial & Residential Cleaning Services</h1>
-                    <h2>Queen Bee offers exceptional commercial and residential cleaning services in Seattle, Bellevue, Lynnwood, Shoreline & surrounding communities. Our professional cleaning technicians are 100% committed to your satisfaction!</h2>
+                    <h1>Residential Cleaning Services That You Can Trust</h1>
+                    <h3>We understand your home is important to you. That’s why we focus on the quality of the clean. Our cleaners aren’t contract workers - they are employees. They care as much as we do.</h3>
                 </Box>
             </Box>
 
             {/*Social Media Links*/}
+            {/*
             <Box className='p-7 flex'>
                 <Box className='flex my-3 m-auto w-60 items-center justify-around text-white' >
                     <Box className='bg-yellow-300 rounded-full w-8 h-8 items-center'>
@@ -45,16 +51,60 @@ const ServicesPage = () => {
                     </Box>
                 </Box>
             </Box>
+            */}
+
+            <Box className='bg-skin-bg h-6' />
+
+            <Box className='flex slanted m-auto justify-center w-full h-[180px]'>
+                <Box className='slanted w-[90%] text-skin-bg'>
+                    <Box className='absolute h-[100px] left-[0%] w-[25%]'>
+                        <Box className='flex flex-col translate-y-[25px] h-[100%]'>
+                            <Fridge className='h-[100%] w-full' />
+                            <p className='h-auto'>Inside Fridge</p>
+                        </Box>
+                    </Box>
+                    <Box className='absolute h-[100px] left-[25%] w-[25%]'>
+                        <Box className='flex flex-col translate-y-[25px] h-[100%]'>
+                            <Oven className='h-[100%] w-full' />
+                            <p className='h-auto'>Inside Oven</p>
+                        </Box>
+                    </Box>
+                    <Box className='absolute h-[100px] left-[50%] w-[25%]'>
+                        <Box className='flex flex-col translate-y-[25px] h-[100%]'>
+                            <Cabinets className='h-[100%] w-full' />
+                            <p className='h-auto'>Inside Cabinets</p>
+                        </Box>
+                    </Box>
+                    <Box className='absolute h-[100px] left-[75%] w-[25%]'>
+                        <Box className='flex flex-col translate-y-[25px] h-[100%]'>
+                            <Window className='h-[100%] w-full' />
+                            <p className='h-auto'>Inside Window</p>
+                        </Box>
+                    </Box>
+                </Box>
+            </Box>
 
             {/*Page Description*/}
-            <Box className='flex w-full bg-black p-1'>
-                <Box className='my-3 m-auto items-center text-white basis-1/2'>
-                    <h1>Cleaning Services Designed To WOW</h1>
-                    <h2>Experience a new era in cleaning services as we revolutionize the industry. Our commitment to a seamless online experience sets us apart. Discover the buzz surrounding our innovative approach and embrace the future of cleanliness today. Our convenient online platform allows you to schedule services effortlessly. We combine cutting-edge technology with skilled professionals to elevate cleanliness standards. Meticulous attention to detail ensures spotless results using eco-friendly solutions. Exceptional customer service is our priority, with a dedicated team ready to assist you. Personalized cleaning solutions cater to your unique needs. Join us in embracing the future of cleaning by scheduling your cleaning session with us today.</h2>
-                </Box>
+            <Box className='w-full bg-skin-bg p-1'>
+                <Box className='flex w-[80%] m-auto my-12'>
+                    <Box className='my-3 mr-4 items-center text-white basis-1/2'>
+                        <h1 className='mb-6'>Elevate Your Space with Professional Cleaning Services</h1>
+                        <p>{`Our cleaning services company is dedicated to providing unparalleled cleanliness and hygiene
+                        solutions for homes and businesses alike. With a commitment to excellence, our professional
+                        team ensures that every space we touch is transformed into a spotless haven. Whether it's
+                        routine maintenance, deep cleaning, or specialized services, we pride ourselves on delivering
+                        meticulous attention to detail. Our well-trained and vetted staff employs the latest industry
+                        techniques and environmentally friendly products to guarantee a pristine outcome. As a
+                        customer-centric company, we prioritize transparency, reliability, and client satisfaction.
+                        We understand that a clean environment contributes to overall well-being, and our mission is
+                        to make that a reality for every client. From dusting to disinfecting, we go beyond
+                        surface-level cleaning, leaving behind a refreshed and welcoming space. Choose our cleaning
+                        services company for a seamless experience where cleanliness meets expertise.`}</p>
+                    </Box>
 
-                <Box className='my-3 m-auto items-center'>
-                    <img src='/src/assets/condor-cleaning-p4.png' className='max-w-[180px]' />
+                    <Box className='my-auto mx-auto pl-4'>
+                        <img src='/src/assets/PureHousekeepingRectangle_WhFu.png' className='scale-[1.25] max-w-[450px]' />
+                    </Box>
                 </Box>
             </Box>
 
@@ -64,84 +114,13 @@ const ServicesPage = () => {
             </Box>
 
             {/*Form*/}
-            <Box
-                sx={{
-                    backgroundImage: `url(${BackgroundImage})`,
-                    backgroundPositionX: '50%',
-                    backgroundPositionY: '-300px',
-                    height: '600px',
-                    backgroundAttachment: 'fixed',
-                    backgroundSize: 'cover',
-                }}
-                className='p-3 flex'>
-                <Box className='flex flex-col my-3 m-auto text-black basis-1/3 items-center justify-around'>
-                    Request Your Free Quote Now
-                    <form className="max-w-lg">
-                        <Box className='flex mb-2'>
-                            <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mr-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-first-name" type="text" placeholder="First Name" />
-
-                            <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Last Name" />
-                        </Box>
-                        <Box className='flex mb-2'>
-                            <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mr-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-phone-number" type="text" placeholder="Phone Number" />
-
-                            <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-email" type="text" placeholder="Email" />
-                        </Box>
-                        <Box className='flex mb-2'>
-                            <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mr-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="Zip Code" />
-
-                            <select className="block appearance-none w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-service">
-                                <option>Desired Service</option>
-                                <option>Housekeeping & Maid Services</option>
-                                <option>Deep House Cleaning Services</option>
-                                <option>Carpet Cleaning Services</option>
-                                <option>Office Cleaning Services</option>
-                                <option>Commercial Janitorial Services</option>
-                                <option>Move In/Out Cleaning Services</option>
-                            </select>
-                        </Box>
-                        <button className="btn-primary text-skin-base" type="button">
-                            Sign Up
-                        </button>
-                    </form>
+            <Box className='bg-skin-bg'>
+                <Box className='mx-[30%] my-10'>
+                    <InitialEstimateForm />
                 </Box>
             </Box>
 
-            {/*Map*/}
-            <Box className='flex w-full my-3 mx-500 m-auto items-center justify-around'>
-                <Box>
-                    map
-                </Box>
-                <Box className='flex flex-col max-w-[200]'>
-                    <Box className='m-auto items-center'>
-                        Most Trusted Commercial & Residential Cleaning Services In The Greater Seattle Metro Area.
-                    </Box>
-
-                    <Box className='m-auto items-center max-w-[200]'>
-                        Service Area: Bellevue, Bothell, Edmonds, Everett, Issaquah, Kirkland, Lynnwood, Marysville, Mercer Island, Mukilteo, North Creek, Redmond, Renton, Sammamish, Shoreline, Seattle, Smokey Point, and surrounding communities.
-                    </Box>
-
-                    <Box className='m-auto items-center max-w'>
-                        Find Us On Google Maps
-                    </Box>
-
-                    <Box className='m-auto items-center max-w'>
-                        info@qbclean.com
-                    </Box>
-
-                    <Box className='m-auto items-center max-w'>
-                        (123) 456-7890
-                    </Box>
-
-                    <Box className='m-auto items-center max-w'>
-                        123 56th Rd Nametown, NJ 66542
-                    </Box>
-
-                    <Box className='m-auto items-center max-w'>
-                        7:00am - 9:00pm Mon - Sun
-                    </Box>
-                </Box>
-            </Box>
+            <DiscountSection />
 
         </div >
     )

@@ -100,41 +100,41 @@ export const NavBtnLink = styled(Link)`
   }
 `;
 const Topbar = () => {
-    return (
-        <Box className='w-full fixed'>
-            <Nav>
-                <NavLink to="/">
-                    <img alt='logo' className='max-w-[250px] block m-auto' src={logo} />
-                </NavLink>
-                <Bars />
-                <NavMenu>
-                    <NavLink to="/">
-                        Home
-                    </NavLink>
-                    <NavLink to="/about-us" >
-                        About
-                    </NavLink>
-                    <NavLink to="/services/" >
-                        Services
-                    </NavLink>
-                    <NavLink to="/careers/" >
-                        Careers
-                    </NavLink>
-                    <NavLink to="/faq/" >
-                        FAQ
-                    </NavLink>
-                    <NavLink to="/contact-us/" >
-                        Contact
-                    </NavLink>
-                </NavMenu>
-                <NavBtn>
-                    <NavBtnLink >
-                        Estimate
-                    </NavBtnLink>
-                </NavBtn>
-            </Nav>
-        </Box >
-    )
+  return (
+    <Box className='w-full fixed z-50'>
+      <Nav>
+        <NavLink to="/">
+          <img alt='logo' className='max-w-[250px] block m-auto' src={logo} />
+        </NavLink>
+        <Bars />
+        <NavMenu>
+          <NavLink to="/">
+            Home
+          </NavLink>
+          <NavLink to="/about-us" >
+            About
+          </NavLink>
+          <NavLink to="/services/" >
+            Services
+          </NavLink>
+          {/* <NavLink to="/careers/" >
+            Careers
+          </NavLink> */}
+          <NavLink to="/faq/" >
+            FAQ
+          </NavLink>
+          <NavLink to="/contact-us/" >
+            Contact
+          </NavLink>
+        </NavMenu>
+        <NavBtn>
+          <NavBtnLink >
+            Estimate
+          </NavBtnLink>
+        </NavBtn>
+      </Nav>
+    </Box >
+  )
 }
 
 export default Topbar

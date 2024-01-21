@@ -13,6 +13,7 @@ module.exports = {
                     prim: 'var(--color-text-prim)',
                     blue: 'var(--color-text-blue)',
                     red: 'var(--color-text-red)',
+                    bg: 'var(--color-background)',
                 }
             },
             backgroundColor: {
