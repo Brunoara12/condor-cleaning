@@ -106,6 +106,35 @@ body {
       #ffbfff 50%);
 }
 
+.striped {
+  color: white;
+  background: repeating-linear-gradient(-60deg,
+      #ff00ff,
+      #ff00ff 25%,
+      #012233 25%,
+      #012233 50%);
+}
+
+.custom-shape-divider-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 185px;
+}
+
+.custom-shape-divider-bottom .shape-fill {
+  fill: #FFBFFF !important;
+}
 
 /*
 :root {

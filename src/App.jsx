@@ -8,6 +8,7 @@ import Root from './layouts/Root'
 import HomePage from './pages/HomePage'
 import ServicesPage from './pages/ServicesPage'
 import FAQPage from './pages/FAQPage'
+import AboutPage from './pages/AboutPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,7 +21,7 @@ function App() {
           element={<Root />}
         >
           <Route index element={<HomePage />} />
-          <Route path='/about-us/' element={<div>ABOUT US PAGE</div>} />
+          <Route path='/about-us/' element={<AboutPage />} />
           <Route path='/services/' element={<ServicesPage />} />
           <Route path='/careers/' element={<div>CAREERS PAGE</div>} />
           <Route path='/faq/' element={<FAQPage />} />
