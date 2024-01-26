@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 import axios from 'axios'
+import PropTypes from 'prop-types';
 
 import React, { useEffect } from 'react'
 
@@ -33,7 +34,7 @@ const userSchema = yup.object().shape({
 }).required()
 
 
-const InitialEstimateForm = () => {
+const InitialEstimateForm = ({ whiteBackground = false }) => {
 
     const isNonMobile = useMediaQuery("(min-width:600px)")
     const { register,
@@ -76,7 +77,7 @@ const InitialEstimateForm = () => {
     return (
         <form onSubmit={handleSubmit(formSubmitHandler, errSubmitHandler)}>
             <Box
-                className='text-skin-base'
+                className={whiteBackground ? `text-skin-prim` : 'text-skin-base'}
                 display="grid"
                 gap="30px"
                 gridTemplateColumns="repeat(4, minmax(0,1fr))"
@@ -88,6 +89,7 @@ const InitialEstimateForm = () => {
                     <h3 className='text-left'>Your Info</h3>
                 </Box>
                 <TextField
+                    className='text-skin-prim'
                     fullWidth
                     variant="filled"
                     type="text"
@@ -98,7 +100,12 @@ const InitialEstimateForm = () => {
                     }}
                     error={!!touchedFields.firstName && !!errors.firstName}
                     helperText={touchedFields.firstName && errors.firstName?.message}
-                    sx={{ gridColumn: "span 2" }}
+                    sx={{
+                        gridColumn: "span 2",
+                        "& .MuiFormLabel-root": {
+                            color: whiteBackground ? "black" : "white",
+                        },
+                    }}
                     {...register('firstName')} />
                 <TextField
                     fullWidth
@@ -107,7 +114,12 @@ const InitialEstimateForm = () => {
                     label="Phone Number"
                     error={!!touchedFields.phoneNumber && !!errors.phoneNumber}
                     helperText={touchedFields.phoneNumber && errors.phoneNumber?.message}
-                    sx={{ gridColumn: "span 2" }}
+                    sx={{
+                        gridColumn: "span 2",
+                        "& .MuiFormLabel-root": {
+                            color: whiteBackground ? "black" : "white",
+                        },
+                    }}
                     {...register('phoneNumber')}
                 />
                 <TextField
@@ -117,7 +129,12 @@ const InitialEstimateForm = () => {
                     label="Email"
                     error={!!touchedFields.email && !!errors.email}
                     helperText={touchedFields.email && errors.email?.message}
-                    sx={{ gridColumn: "span 4" }}
+                    sx={{
+                        gridColumn: "span 4",
+                        "& .MuiFormLabel-root": {
+                            color: whiteBackground ? "black" : "white",
+                        },
+                    }}
                     {...register('email')}
                 />
                 <Box className='ml-5' sx={{ gridColumn: "span 4" }}>
@@ -126,6 +143,7 @@ const InitialEstimateForm = () => {
                 <TextField
                     select
                     fullWidth
+                    className='white-background'
                     variant="filled"
                     defaultValue=""
                     label="Service Type"
@@ -140,7 +158,15 @@ const InitialEstimateForm = () => {
                     }}
                     error={!!touchedFields.serviceType && !!errors.serviceType}
                     helperText={touchedFields.serviceType && errors.serviceType?.message}
-                    sx={{ gridColumn: "span 4" }}
+                    sx={{
+                        gridColumn: "span 4",
+                        "& .MuiSvgIcon-root": {
+                            color: whiteBackground ? "black" : "white",
+                        },
+                        "& .MuiFormLabel-root": {
+                            color: whiteBackground ? "black" : "white",
+                        },
+                    }}
                 >
                     <MenuItem value="">Select...</MenuItem>
                     <MenuItem value="One Time Cleaning">One Time Cleaning</MenuItem>
@@ -155,7 +181,12 @@ const InitialEstimateForm = () => {
                     label="Zip Code"
                     error={!!touchedFields.zipCode && !!errors.zipCode}
                     helperText={touchedFields.zipCode && errors.zipCode?.message}
-                    sx={{ gridColumn: "span 2" }}
+                    sx={{
+                        gridColumn: "span 2",
+                        "& .MuiFormLabel-root": {
+                            color: whiteBackground ? "black" : "white",
+                        },
+                    }}
                     {...register('zipCode')}
                 />
 
@@ -173,7 +204,15 @@ const InitialEstimateForm = () => {
                     }}
                     error={!!touchedFields.bedrooms && !!errors.bedrooms}
                     helperText={touchedFields.bedrooms && errors.bedrooms?.message}
-                    sx={{ gridColumn: "span 1" }}
+                    sx={{
+                        gridColumn: "span 1",
+                        "& .MuiSvgIcon-root": {
+                            color: whiteBackground ? "black" : "white",
+                        },
+                        "& .MuiFormLabel-root": {
+                            color: whiteBackground ? "black" : "white",
+                        },
+                    }}
                 >
                     <MenuItem value="">Select...</MenuItem>
                     <MenuItem value="1">1</MenuItem>
@@ -198,7 +237,15 @@ const InitialEstimateForm = () => {
                     })}
                     error={!!touchedFields.bathrooms && !!errors.bathrooms}
                     helperText={touchedFields.bathrooms && errors.bathrooms?.message}
-                    sx={{ gridColumn: "span 1" }}
+                    sx={{
+                        gridColumn: "span 1",
+                        "& .MuiSvgIcon-root": {
+                            color: whiteBackground ? "black" : "white",
+                        },
+                        "& .MuiFormLabel-root": {
+                            color: whiteBackground ? "black" : "white",
+                        },
+                    }}
                 >
                     <MenuItem value="">Select...</MenuItem>
                     <MenuItem value="1">1</MenuItem>
@@ -212,10 +259,14 @@ const InitialEstimateForm = () => {
                 </TextField>
             </Box>
             <Box className="flex justify-end mt-5">
-                <button type='submit' className='btn-primary'>Get Estimate</button>
+                <button type='submit' className='btn-primary hover:bg-skin-bgAccent'>Get Estimate</button>
             </Box>
         </form>
     )
+}
+
+InitialEstimateForm.propTypes = {
+    whiteBackground: PropTypes.boolean
 }
 
 export default InitialEstimateForm

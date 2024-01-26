@@ -59,7 +59,7 @@ const Footer = () => {
                         <li>
                             <div className='flex'>
                                 <EmailIcon className='mr-2' />
-                                <p>info@condorcleaning.com</p>
+                                <p>info@purehousekeeping.com</p>
                             </div>
                         </li>
                         <li>
