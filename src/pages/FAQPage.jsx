@@ -1,6 +1,8 @@
 import React from 'react'
 import { Box } from '@mui/material'
+
 import AccordionComponent from '../components/AccordionComponent';
+import BackgroundSprinkle from '../../src/assets/sprinkle-background.svg';
 
 
 const FAQPage = () => {
@@ -10,105 +12,94 @@ const FAQPage = () => {
             category: "General"
         },
         {
-            question: "What Types Of Cleaning Services Does Condor Cleaning Service Offer?",
-            answer: "We have extensive house cleaning services, including apartment cleaning, recurring maid services, deep cleaning, move-in and move-out cleaning, disinfection, carpet cleaning, and office cleaning."
+            question: "What Types Of Cleaning Services Does Pure Housekeeping Offer?",
+            answer: "Pure Housekeeping offers a comprehensive array of solutions tailored to meet your cleaning needs, including but not limited to recurring cleanings (AT A DISCOUNT!), one-time cleanings, deep cleanings, move in/out cleanings. We also offer extra services for an added fee: oven cleaning, fridge cleaning, inside cabinet cleanings, and inside window cleanings."
         },
         {
             question: "What Is Included In A Standard House Cleaning Services?",
-            answer: "Our standard house cleaning services are customized to meet your needs. They typically include vacuuming, dusting, wiping down surfaces, bathroom and kitchen cleaning, and other essential services."
+            answer: "Our standard house cleaning services are customized to meet your needs. They typically include vacuuming, dusting, mopping and wiping down superficial surfaces, bathroom and kitchen cleaning, and other essential services."
         },
         {
             question: "Do I Need To Provide Cleaning Supplies For The Service?",
-            answer: "Our house cleaners arrive equipped to complete the work with eco-friendly cleaning products to ensure the best results. You don’t have to supply anything."
+            answer: "Our house cleaners are provided with eco-friendly cleaning products and necessary tools to ensure efficient cleaning each time. You don’t have to supply anything, unless you prefer us to work with a specific product that your household uses."
         },
-        {
-            question: "Are Your Cleaners Trained And Insured?",
-            answer: "We carry insurance for all our cleaners and train them to clean your house to your satisfaction."
-        },
+        // {
+        //     question: "Are Your Cleaners Trained And Insured?",
+        //     answer: "We carry insurance for all our cleaners and train them to clean your house to your satisfaction."
+        // },
         {
             question: "How Long Does A Typical Cleaning Service Take?",
-            answer: "A standard-size home takes about three hours to clean. Your home may take more or less depending on its size and which services you request."
+            answer: "It is difficult to measure a time for our services without seeing your house first and what type of services you need, we can give you a close estimation if you fill out our estimate form on our home page. Our cleaners are very skilled and try to clean as fast as possible without sacrificing quality. Our calculations are usually accurate through our online estimate request. First time cleanings usually take longer than our recurring services, once we have visited your home after the first time we have procedures in place that allow us to get in and out of your house."
+        },
+        {
+            category: "Recurring Housekeeping"
+        },
+        {
+            question: "How much does Recurring Home Cleaning Cost?",
+            answer: "The cost of recurring cleaning services vary and without seeing your house first it depends on several factors. We can give you a close estimation if you fill out our estimate form on our home page. Remember that we offer discounts up to 24% OFF for recurring services after your initial clean. Our cleaners are very skilled and try to clean as fast as possible without sacrificing quality. Our calculations are usually accurate through our online estimate request. First time cleanings usually take longer than our recurring services, once we have visited your home after the first time we have procedures in place that allow us to get in and out of your house."
+        },
+        {
+            question: "Are Your Cleaning Products Safe For My Family And Pets?",
+            answer: "Our house cleaners are provided with eco-friendly cleaning products and necessary tools to ensure efficient cleaning each time. We take your family's safety with upmost care and we want to know if you have any concerns so we can accomodate to you and your family's needs."
+        },
+        {
+            question: "What Measures Do You Take To Ensure The Security And Trustworthiness Of Your Cleaning Staff?",
+            answer: "We understand the importance of trust when inviting someone into your home. Our cleaning staff undergoes a rigorous selection process. They are trained professionals who are dedicated to maintaining the highest level of professionalism and integrity. We take our reputation very seriously and we want you to feel safe having our cleaners in your home while serviving your needs."//Additionally, we are fully bonded and insured to provide added peace of mind, ensuring that you and your home are protected throughout our service engagements."
+        },
+        {
+            category: "Deep Cleaning"
         },
         {
             question: "What Is Deep Cleaning, And Why Is It Necessary?",
-            answer: "Deep cleaning is when our house cleaners scrub your house from top to bottom. We leave nothing undone. This level of cleaning is required to maintain a clean, healthy environment for your family"
+            answer: "Deep cleaning involves a thorough process of removing dirt, grime, and germs from all surfaces in your home, including hard-to-reach areas. It is necessary for your family's health as it helps eliminate allergens, dust mites, and harmful pathogens that can cause respiratory issues and allergies. By maintaining a clean and sanitized environment, deep cleaning reduces the risk of illness transmission and ensures a safer and more comfortable living space for your loved ones."
         },
         {
             question: "How Often Should I Get My Home Deep Cleaned?",
-            answer: "We recommend requesting deep cleaning services once or twice a year to ensure your home is as clean as possible."
-        },
-
-
-        {
-            category: "Deep cleaning"
+            answer: "The frequency of deep cleaning depends on several factors, including the size of your home, the number of occupants, and your lifestyle. As a general guideline, we recommend to deep clean your home at least once every six to twelve months. However, homes with pets, young children, or individuals with allergies may require more frequent deep cleaning, perhaps every three to six months. Additionally, high-traffic areas and commonly used spaces like kitchens and bathrooms may benefit from more frequent deep cleaning sessions. Ultimately, the best frequency for deep cleaning depends on your specific circumstances and cleaning needs."
         },
         {
-            question: "What Is A Deep House Cleaning Service Exactly?",
-            answer: "A deep house cleaning service is a comprehensive and thorough cleaning process that goes beyond regular cleaning tasks. It typically includes cleaning and sanitizing high-touch surfaces, detailed cleaning of kitchen appliances, thorough bathroom disinfection, dusting and wiping of baseboards, blinds, and light fixtures, deep carpet cleaning, and more. The goal is to address neglected areas and remove built-up dirt, grime, and allergens to leave your home exceptionally clean and refreshed."
+            category: "Move In/Out Cleaning"
         },
         {
-            question: "How Long Does A Deep House Cleaning Service Take?",
-            answer: "The duration of a deep house cleaning service can vary depending on factors such as the size of your home, its current cleanliness level, and the specific services requested. On average, a deep cleaning can take anywhere from several hours to a full day for larger homes. Our professional cleaning team will provide you with a more accurate time estimate after assessing your home's needs during an initial consultation."
+            question: "How much does Move In/Out Cleaning Cost?",
+            answer: "The cost of move in/out cleaning services vary and without seeing your house first it depends on several factors. We can give you a close estimation if you fill out our estimate form on our home page. Usually we work faster when the living space is empty, but we do a more thorough cleaning than a standard clean so we do take slightly longer. Our cleaners are very skilled and try to clean as fast as possible without sacrificing quality. Our calculations are usually accurate through our online estimate request. First time cleanings usually take longer than our recurring services."
         },
         {
-            question: "How Often Should I Schedule A Deep House Cleaning Service?",
-            answer: "The frequency of deep house cleaning services depends on your individual needs and lifestyle. For most homes, deep cleaning on a quarterly or semi-annual basis is sufficient to maintain a high level of cleanliness. However, homes with high traffic, pets, or specific cleanliness standards may benefit from more frequent deep cleanings. Our team can help you determine an appropriate schedule tailored to your requirements during the consultation."
-        },
-
-        {
-            category: "Carpet Cleaning"
+            question: "What Does A Standard Move In/Out Cleaning Service Include?",
+            answer: "A standard move-in/move-out cleaning service usually covers a thorough cleaning of the entire inside of the property. This includes cleaning and sanitizing kitchen appliances, countertops, and cabinets; scrubbing and disinfecting bathrooms; dusting and wiping down all surfaces, including baseboards; vacuuming and mopping floors; and removing any trash or debris."
         },
         {
-            question: "How Often Should I Have My Carpets Cleaned",
-            answer: "When it comes to maintaining a clean and healthy home, carpet cleaning plays a crucial role. Regular carpet cleaning not only enhances the appearance of your space but also improves indoor air quality by eliminating dust, allergens, and pollutants. However, many homeowners often wonder, 'How often should I get my carpets cleaned?' In this comprehensive guide, we will answer that question and provide you with essential insights to help you keep your carpets in pristine condition."
+            question: "How Far In Advance Should I Schedule Move-In/Move-Out Cleaning Services?",
+            answer: "We advise you to schedule move-in/move-out cleaning services as far in advance as possible, ideally at least a week or two before your planned move-in or move-out date. This advance scheduling allows us to accommodate your preferred date and time, ensuring that we have availability in our schedule. Additionally, booking early gives you peace of mind knowing that your cleaning needs are taken care of, allowing you to focus on other aspects of your move without last-minute stress. If you're moving during peak seasons or are in a high-demand area, consider scheduling even earlier to secure your preferred time slot."
         },
-        {
-            question: "What Can I Do To Keep My Carpets Cleaner Longer?",
-            answer: "Keeping your home clean and fresh is a top priority for many of us. One area that often requires special attention is our carpets. With the constant foot traffic and daily activities, dirt and hair can easily accumulate, leaving your carpets looking dull and uninviting. However, with a regular cleaning routine that includes monthly vacuuming and shampooing, you can maintain a clean and vibrant carpet that will stand the test of time."
-        },
-        {
-            question: "How Much Does Rug Cleaning Cost?",
-            answer: "We understand the importance of providing exceptional service at a reasonable cost. That's why we have revolutionized the rug cleaning industry by introducing hourly pricing instead of traditional square foot or room size rates. With our customer-centric approach, no matter the size or dimensions of your rug, our services are always affordable!"
-        },
-        {
-            question: "How Do You Clean A Dirty Carpet?",
-            answer: "When it comes to tackling dirt, stains, and stubborn pet hair on your carpets, you deserve nothing but the best. While vacuum cleaners can help to some extent, they often fall short of providing a truly deep and thorough clean. That's where the expertise of professional carpet cleaning services in Seattle comes in. By availing their specialized equipment and employing a meticulous steam cleaning process, these professionals can ensure that your carpets are left immaculately clean, free from dirt, stains, and pet hair."
-        },
-        {
-            question: "How Do You Clean The Carpet To Make It Look New?",
-            answer: "Carpet cleaning may be a challenging task, but fear not! With the right techniques and tools, you can transform your carpets and make them look as good as new. By following these expert tips, you'll be able to achieve a deep clean that removes dirt, dust, and debris, leaving your carpets fresh, spotless, and inviting."
-        },
-        {
-            question: "How Do You Clean Upholstery That Cannot Be Washed?",
-            answer: "Is your beloved couch longing for a refreshing makeover, but alas, it cannot be washed? Worry not! We have a trove of ingenious techniques to revive your upholstery and infuse it with a delightful fragrance. Discover the hidden treasures of upholstery maintenance and unlock the key to a fresh and clean seating experience."
-        },
-        {
-            question: "How Do You Clean An Area Rug?",
-            answer: "Maintaining the cleanliness of your area rug is crucial not only for aesthetic purposes but also for promoting a healthy living environment. Over time, dust, dirt, allergens, and even pet dander can accumulate in the fibers of the rug, causing potential health risks and compromising the rug's appearance. Regular cleaning not only removes these contaminants but also helps prolong the lifespan of the rug."
-        }
     ]
 
     return (
-        <div className='flex flex-col flex-1 items-center'>
-            <Box className='flex flex-col my-3 mx-5 w-2/5'>
+        <Box className='flex flex-col flex-1 items-center' sx={{
+            backgroundImage: `url(${BackgroundSprinkle})`,
+            backgroundRepeat: 'repeat',
+            //backgroundAttachment: 'fixed',
+        }}>
+            <Box className='flex flex-col mt-3 mb-12 mx-5 w-3/5'>
 
-            {FAQ.map((faq,i)  => {
-                if ("category" in faq) {
-                    return <h2 key={i} className='mt-10 mb-3'>{ faq.category }</h2>
-                } else {
-                    return <AccordionComponent 
-                    question={faq.question} 
-                    answer={faq.answer}
-                    key={i}
-                    ind={i}
-                    />     
-                }      
-            })}
+                {FAQ.map((faq, i) => {
+                    if ("category" in faq) {
+                        return <Box key={i} className=''><h2 className='mt-10 mb-3 bg-white inline-block opacity-80 rounded-full'>{faq.category}</h2></Box>
+                    } else {
+                        return <AccordionComponent
+                            align='left'
+                            question={faq.question}
+                            answer={faq.answer}
+                            key={i}
+                            ind={i}
+                        />
+                    }
+                })}
             </Box>
-            
 
 
-        </div >
+
+        </Box >
     )
 }
 
